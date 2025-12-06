@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+
 const HookPracticePage = () => {
+    const inputRef = useRef();
     const [count, setCount] = useState(0);
 
     const countHandler = () => {
@@ -12,9 +14,19 @@ const HookPracticePage = () => {
         }
     }
 
+    const focusInput = () => {
+        inputRef.current.focus()
+    }
+
     return (
         <>
         <h1>This is hook practice page</h1>
+        <div>
+            <input ref={inputRef} />
+            <button onClick={focusInput}>
+                Focus Input
+            </button>
+        </div>
         <div className="m-auto flex flex-col gap-6 justify-center  items-center h-screen">
             <p>Count clickeck: {count}</p>
             <div className="flex gap-5">
