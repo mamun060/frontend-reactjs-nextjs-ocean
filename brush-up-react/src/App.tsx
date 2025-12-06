@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProudctPage from './pages/ProudctPage';
 import GamePage from './pages/GamePage';
+import HookPracticePage from './pages/HookPractice';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path='/products' element={<ProudctPage />} />
           <Route path='/game' element={<GamePage />} />
+          <Route path='/hook-practice' element={<HookPracticePage />} />
           <Route path="*" element={
             <h1 className=' h-svh flex justify-center items-center text-4xl font-extrabold text-red-400'>404 Not Found</h1>
           } />

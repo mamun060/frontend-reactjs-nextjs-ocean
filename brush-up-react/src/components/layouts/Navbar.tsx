@@ -16,6 +16,9 @@ function Navbar() {
             <li>
                 <Link to="/game" className="hover:underline text-xl font-semibold">Game</Link>
             </li>
+            <li>
+                <Link to="/hook-practice" className="hover:underline text-xl font-semibold">Hooks</Link>
+            </li>
         </ul>
     </nav>
   )
