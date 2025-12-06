@@ -9,18 +9,18 @@ import HookPracticePage from './pages/HookPractice';
 
 function App() {
   return (
-    <Layouts>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path='/products' element={<ProudctPage />} />
-          <Route path='/game' element={<GamePage />} />
-          <Route path='/hook-practice' element={<HookPracticePage />} />
-          <Route path="*" element={
-            <h1 className=' h-svh flex justify-center items-center text-4xl font-extrabold text-red-400'>404 Not Found</h1>
-          } />
-        </Routes>
-    </Layouts>
+      <Layouts>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path='/products' element={<ProudctPage />} />
+            <Route path='/game' element={<GamePage />} />
+            <Route path='/hook-practice' element={<HookPracticePage />} />
+            <Route path="*" element={
+              <h1 className=' h-svh flex justify-center items-center text-4xl font-extrabold text-red-400'>404 Not Found</h1>
+            } />
+          </Routes>
+      </Layouts>
   )
 }
 

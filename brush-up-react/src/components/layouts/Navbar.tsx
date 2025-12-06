@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/createContext";
+
 function Navbar() {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   return (
-    <nav className="flex justify-between items-center text-black p-4">
+    <nav style={{ background: theme === 'dark' ? '#333' : '#fff'}} className="flex justify-between items-center text-black p-4">
       <div className="text-2xl font-bold">MyApp</div>
         <ul className="flex space-x-4">
             <li>
@@ -18,6 +23,11 @@ function Navbar() {
             </li>
             <li>
                 <Link to="/hook-practice" className="hover:underline text-xl font-semibold">Hooks</Link>
+            </li>
+            <li className=" bg-amber-700">
+              <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+                Toggle Theme
+              </button>
             </li>
         </ul>
     </nav>
