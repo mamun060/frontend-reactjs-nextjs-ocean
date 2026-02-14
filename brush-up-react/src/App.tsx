@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage';
 import ProudctPage from './pages/ProudctPage';
 import GamePage from './pages/GamePage';
 import HookPracticePage from './pages/HookPractice';
+import Optimization from './pages/Optimization';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/products' element={<ProudctPage />} />
             <Route path='/game' element={<GamePage />} />
             <Route path='/hook-practice' element={<HookPracticePage />} />
+            <Route path='/optimization' element={<Optimization />} />
             <Route path="*" element={
               <h1 className=' h-svh flex justify-center items-center text-4xl font-extrabold text-red-400'>404 Not Found</h1>
             } />

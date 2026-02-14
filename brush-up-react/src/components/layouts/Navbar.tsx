@@ -24,6 +24,9 @@ function Navbar() {
             <li>
                 <Link to="/hook-practice" className="hover:underline text-xl font-semibold">Hooks</Link>
             </li>
+            <li>
+                <Link to="/optimization" className="hover:underline text-xl font-semibold">Optimization</Link>
+            </li>
             <li className=" bg-amber-700">
               <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
                 Toggle Theme
