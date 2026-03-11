@@ -1,5 +1,6 @@
 "use client";
 import useAutocomplete from '@/hooks/useAutocomplete';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function SearchAutocomplete() {
@@ -29,8 +30,8 @@ export default function SearchAutocomplete() {
       {results.length > 0 && (
         <div className="absolute left-6 right-6 mt-2 bg-white border border-gray-200 rounded-xl shadow-2xl z-10 overflow-hidden">
           {results.map((item) => (
+            <Link key={item.id} href={`/products/${item?.id}`}>
             <div 
-              key={item.id}
               className="p-4 hover:bg-gray-50 cursor-pointer border-b last:border-none flex justify-between items-center"
               onClick={() => setSearchTerm(item.title)}
             >
@@ -40,6 +41,7 @@ export default function SearchAutocomplete() {
               </div>
               <span className="text-blue-600 font-bold text-sm">${item.price}</span>
             </div>
+            </Link>
           ))}
         </div>
       )}

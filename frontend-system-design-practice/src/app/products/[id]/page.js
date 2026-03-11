@@ -1,10 +1,17 @@
-import { products } from '@/lib/mock-data';
+import { notFound } from "next/navigation";
 
 const ProductDetailPage = async ({ params }) => {
+  const { id } = await params;
 
-  const { id } = await params;   // 👈 FIX HERE
+  const response = await fetch(`http://localhost:3001/products/${id}`, {
+    cache: "no-store", // prevents caching during development
+  });
 
-  const product = products.find((p) => p.id === Number(id));
+  if (!response.ok) {
+    notFound();
+  }
+
+  const product = await response.json();
 
   if (!product) {
     return <div>Product not found</div>;
@@ -13,27 +20,32 @@ const ProductDetailPage = async ({ params }) => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        {/* Product Image */}
         <div>
           <img
-            src="/images/products/product-1.png"
+            src={product.image || "/images/products/product-1.png"}
             alt={product.name}
             className="w-full h-auto object-cover rounded-lg shadow-md"
           />
         </div>
 
+        {/* Product Details */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+          <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
 
           <p className="text-gray-600 mb-4 text-2xl">
-            ${product.price.toFixed(2)}
+            ${Number(product.price).toFixed(2)}
           </p>
 
-          <p className="text-lg mb-4">{product.description}</p>
+          <p className="text-lg mb-6">{product.category}</p>
+          <p className="text-lg mb-6">{product.description}</p>
 
           <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
             Add to Cart
           </button>
         </div>
+
       </div>
     </div>
   );
