@@ -1,12 +1,8 @@
 import SearchAutocomplete from "@/components/search/SearchAutocomplete";
-import SearchBar from "@/components/search/SearchBar";
-import { Search } from "lucide-react";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      {/* <SearchBar /> */}
+    <div className="flex min-h-screen justify-center bg-zinc-50 font-sans dark:bg-black">
       <SearchAutocomplete />
     </div>
   );
