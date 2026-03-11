@@ -26,7 +26,7 @@ export default function SearchAutocomplete() {
         )}
       </div>
 
-      {/* সার্চ রেজাল্ট ড্রপডাউন */}
+      {/* search result */}
       {results.length > 0 && (
         <div className="absolute left-6 right-6 mt-2 bg-white border border-gray-200 rounded-xl shadow-2xl z-10 overflow-hidden">
           {results.map((item) => (

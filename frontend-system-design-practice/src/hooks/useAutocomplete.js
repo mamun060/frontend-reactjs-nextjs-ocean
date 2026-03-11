@@ -6,7 +6,7 @@ export default function useAutocomplete(query, delay = 400) {
   const cache = useRef({});
 
   useEffect(() => {
-    // ১. ক্লিন করা (অতিরিক্ত স্পেস কমানো)
+    // clean extra space from search input data
     const normalizedQuery = query.trim().replace(/\s+/g, ' ');
 
     if (!normalizedQuery || normalizedQuery.length < 2) {
@@ -22,11 +22,6 @@ export default function useAutocomplete(query, delay = 400) {
     const timer = setTimeout(async () => {
       setLoading(true);
       try {
-        // 🔥 আসল ট্রিক এখানে: 
-        // যদি ইউজার "prac test" লেখে, আমরা সেটাকে ভেঙে ['prac', 'test'] করছি
-        // এরপর ?q=prac&q=test এভাবে পাঠাচ্ছি। json-server তখন OR লজিক বা 
-        // মাল্টিপল ফিল্টারিং করতে পারে (ভার্সন ভেদে)। 
-        
         const words = normalizedQuery.split(' ');
         const queryString = words.map(word => `q=${encodeURIComponent(word)}`).join('&');
 
