@@ -1,7 +1,9 @@
 ### frontend system design practice
 - 1. Design an autocomplete search with debouncing and caching.
 
-- 2. Design an infinite scrolling feed.
+- 2. Design an infinite scrolling feed. 
+(https://github.com/mamun060/frontend-reactjs-nextjs-ocean/tree/master/frontend-system-design-practice/src/components/search)
+
 - 3. How would you optimize a slow React application?
 - 4. How would you improve Web Vitals (LCP, CLS, INP)?
 - 5. Design a reusable component library for a large team.
