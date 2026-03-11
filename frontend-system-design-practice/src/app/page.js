@@ -1,5 +1,5 @@
-import SearchAutocomplete from "@/components/ui/search/SearchAutocomplete";
-import SearchBar from "@/components/ui/search/SearchBar";
+import SearchAutocomplete from "@/components/search/SearchAutocomplete";
+import SearchBar from "@/components/search/SearchBar";
 import { Search } from "lucide-react";
 import Image from "next/image";
 
