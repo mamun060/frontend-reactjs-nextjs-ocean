@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect } from "react";
 
 export default function useInfiniteScroll(pageNumber) {
   const [loading, setLoading] = useState(false);
@@ -11,7 +11,7 @@ export default function useInfiniteScroll(pageNumber) {
       try {
         // json-server pagination: _page and _limit
         const response = await fetch(
-          `http://localhost:3001/products?_page=${pageNumber}&_limit=10`
+          `http://localhost:3001/products?_page=${pageNumber}&_limit=10`,
         );
         const data = await response.json();
 
@@ -19,7 +19,17 @@ export default function useInfiniteScroll(pageNumber) {
         if (data.length === 0) {
           setHasMore(false);
         } else {
-          setItems((prev) => [...prev, ...data]);
+          setItems((prev) => {
+            // আগের সব আইডি একটি Set-এ নিয়ে নেওয়া (O(1) lookup speed)
+            const existingIds = new Set(prev.map((item) => item.id));
+
+            // নতুন ডাটা থেকে শুধু সেগুলোই নেওয়া যা আগে ছিল না (Filtering duplicates)
+            const filteredNewData = data?.filter(
+              (item) => !existingIds.has(item.id),
+            );
+
+            return [...prev, ...filteredNewData];
+          });
         }
       } catch (err) {
         console.error("Fetch error:", err);
