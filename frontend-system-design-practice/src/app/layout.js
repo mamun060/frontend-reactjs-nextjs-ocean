@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "E-commerce",
+  title: "System Design Practice projects",
   description: "A basic e-commerce website",
 };
 
