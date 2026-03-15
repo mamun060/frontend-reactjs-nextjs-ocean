@@ -4,7 +4,7 @@ const ProductDetailPage = async ({ params }) => {
   const { id } = await params;
 
   const response = await fetch(`http://localhost:3001/products/${id}`, {
-    cache: "no-store", // prevents caching during development
+    cache: "no-store",
   });
 
   if (!response.ok) {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useRef, useCallback } from 'react';
 
 export default function InfiniteProductsLoads() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
   const { items, loading, hasMore } = useInfiniteScroll(page);
 
