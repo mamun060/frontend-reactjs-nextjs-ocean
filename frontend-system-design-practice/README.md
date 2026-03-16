@@ -6,6 +6,7 @@
 - 3. How would you optimize a slow React application?
 (https://github.com/mamun060/frontend-reactjs-nextjs-ocean/tree/master/frontend-system-design-practice/src/components/optimization)
 - 4. How would you improve Web Vitals (LCP, CLS, INP)?
+(https://github.com/mamun060/frontend-reactjs-nextjs-ocean/tree/master/frontend-system-design-practice/src/components/improveWebVital)
 - 5. Design a reusable component library for a large team.
 - 6. How would you handle API failures and retries gracefully?
 - 7. How would you implement dark mode across the app?

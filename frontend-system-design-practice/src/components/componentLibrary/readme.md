@@ -1,0 +1,2 @@
+## 05. Design a reusable component library for a large team.
+**Designing a reusable component library for a large team is a classic Senior Frontend system design challenge. It’s less about writing CSS and more about Developer Experience (DX), scalability, and governance.**
