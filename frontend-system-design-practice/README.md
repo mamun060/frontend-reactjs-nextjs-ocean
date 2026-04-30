@@ -12,6 +12,6 @@
 6. How would you handle API failures and retries gracefully?
 (https://github.com/mamun060/frontend-reactjs-nextjs-ocean/tree/master/frontend-system-design-practice/src/components/apiFailureRetries)
 7. How would you implement dark mode across the app?
-8. Redux vs Context vs Zustand, how do you decide in a large-scale application?
+8. Redux vs Context vs Zustand, how do you decide in a large-scale application?(https://github.com/mamun060/frontend-reactjs-nextjs-ocean/tree/master/frontend-system-design-practice/src/components/day-07)
 9. How would you prevent XSS, CSRF, token leakage, and secure authentication flows in a frontend app?
 10. How would you design SSR/SSG or hydration strategy for a React application? When would you use each?
